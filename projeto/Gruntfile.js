@@ -87,6 +87,19 @@ module.exports = function(grunt) {
 
 	    		files: 'public/less/**/*.less',
 	    		tasks: 'less:compilar'
+	    	},
+	    	js: {
+	    		options: {
+	    			event: ['changed']
+	    		},
+	    		files: 'public/js/**/*.js',
+	    		tasks: 'jshint:js'
+	    	}
+	    },
+
+	    jshint: {
+	    	js: {
+	    		src: ['public/js/**/*.js']
 	    	}
 	    }
 
@@ -113,4 +126,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 }
